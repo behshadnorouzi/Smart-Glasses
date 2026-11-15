@@ -13,7 +13,7 @@ This repository covers the electronics stage: part selection, power path,
 wiring and bench-test tools. The goal was a working prototype built quickly
 from parts available on the Iranian market.
 
-![Wiring diagram](docs/simulation.jpg)
+![Wiring diagram](docs/wiring-diagram.jpg)
 
 ## Hardware
 
