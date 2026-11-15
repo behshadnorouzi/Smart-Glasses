@@ -1,6 +1,6 @@
 # Smart Glasses
 
-[![CI](https://github.com/behshadnorouzi/Smart-Glasses/actions/workflows/ci.yml/badge.svg)](https://github.com/behshadnorouzi/Smart-Glasses/actions/workflows/ci.yml)
+[![CI](https://github.com/behshadnorouzi/smart-glasses/actions/workflows/ci.yml/badge.svg)](https://github.com/behshadnorouzi/smart-glasses/actions/workflows/ci.yml)
 
 Hardware prototype of camera glasses for visually impaired users. A small
 camera on the frame captures what is in front of the wearer and streams it
