@@ -1,2 +1,2 @@
-matplotlib>=3.7
+matplotlib>=3.11.2
 pyserial>=3.5
