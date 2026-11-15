@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  firmware:
+    name: firmware (${{ matrix.board }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - board: Arduino Uno
+            fqbn: arduino:avr:uno
+            platforms: |
+              - name: arduino:avr
+          - board: ESP32
+            fqbn: esp32:esp32:esp32
+            platforms: |
+              - name: esp32:esp32
+                source-url: https://espressif.github.io/arduino-esp32/package_esp32_index.json
+                version: 3.2.1
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: ${{ matrix.fqbn }}
+          platforms: ${{ matrix.platforms }}
+          sketch-paths: |
+            - firmware
+          enable-warnings-report: true
+
+  serial-plot:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/serial_plot
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt pytest
+
+      - name: Run tests
+        run: python -m pytest -v
