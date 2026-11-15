@@ -19,7 +19,7 @@ jobs:
                 source-url: https://espressif.github.io/arduino-esp32/package_esp32_index.json
                 version: 3.2.1
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: arduino/compile-sketches@v1
         with:
@@ -35,7 +35,7 @@ jobs:
       run:
         working-directory: tools/serial_plot
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-python@v5
         with:
