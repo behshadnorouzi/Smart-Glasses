@@ -1,6 +1,16 @@
-**/.vscode
-**/temp
-**/__Previews
-**/History
-**/Project Logs*
-**/*.PrjPcbStructure
+# Editors
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Arduino / PlatformIO build output
+build/
+.pio/
+
+# OS
+.DS_Store
+Thumbs.db
